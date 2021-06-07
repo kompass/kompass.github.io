@@ -1,0 +1,55 @@
+@prefix : <#>.
+@prefix solid: <http://www.w3.org/ns/solid/terms#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix pim: <http://www.w3.org/ns/pim/space#>.
+@prefix schema: <http://schema.org/>.
+@prefix ldp: <http://www.w3.org/ns/ldp#>.
+@prefix pro: <./>.
+@prefix n0: <http://www.w3.org/ns/auth/acl#>.
+@prefix nki: </>.
+@prefix c: <https://antoinecailly.solidcommunity.net/profile/card#>.
+@prefix n: <http://www.w3.org/2006/vcard/ns#>.
+
+pro:card a foaf:PersonalProfileDocument; foaf:maker :me; foaf:primaryTopic :me.
+
+:me
+    a schema:Person, foaf:Person;
+    n:fn "Nicolas Kirchner";
+    n0:trustedApp
+            [
+                n0:mode n0:Append, n0:Control, n0:Read, n0:Write;
+                n0:origin <http://localhost:1234>
+            ],
+            [
+                n0:mode n0:Append, n0:Control, n0:Read, n0:Write;
+                n0:origin <http://localhost:3000>
+            ],
+            [
+                n0:mode n0:Append, n0:Control, n0:Read, n0:Write;
+                n0:origin <https://podbrowser.inrupt.com>
+            ],
+            [
+                n0:mode n0:Append, n0:Control, n0:Read, n0:Write;
+                n0:origin <https://podexplorer.gigalixirapp.com>
+            ],
+            [
+                n0:mode n0:Append, n0:Read, n0:Write;
+                n0:origin <https://applications.linkedpipes.com>
+            ],
+            [
+                n0:mode n0:Append, n0:Read, n0:Write;
+                n0:origin <https://penny.vincenttunru.com>
+            ],
+            [
+                n0:mode n0:Append, n0:Read, n0:Write;
+                n0:origin <https://solid.github.io>
+            ],
+            [
+                n0:mode n0:Append, n0:Read, n0:Write;
+                n0:origin <https://web.inox.app>
+            ];
+    pim:preferencesFile </settings/prefs.ttl>;
+    pim:storage nki:;
+    solid:account nki:;
+    foaf:knows c:me;
+    foaf:name "Nicolas Kirchner";
